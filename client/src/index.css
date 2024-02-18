@@ -180,7 +180,7 @@ nav .logo-container .logo {
 }
 
 .onboarding form input {
-    padding: 15px 30px;
+    padding: 15px 20px;
     margin: 10px 0;
     font-size: 15px;
     border: solid 2px rgb(219, 219, 219);
@@ -189,6 +189,25 @@ nav .logo-container .logo {
 
 .onboarding form label {
     margin: 10px 0;
+}
+
+.onboarding form .multicontainer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.onboarding form .container {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.onboarding form .check-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .onboarding form .multiple-input-container {
@@ -216,10 +235,6 @@ nav .logo-container .logo {
 
 .onboarding form input[type=radio] {
     display: none;
-}
-
-.onboarding form input[type=number] {
-    width: 10%;
 }
 
 .onboarding form input[type=radio]:checked + label {

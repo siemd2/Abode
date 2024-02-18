@@ -1,7 +1,8 @@
 import whiteLogo from "../images/abode-high-resolution-logo-white-transparent.png";
+import blackLogo from "../images/abode-high-resolution-logo-black-transparent.png";
 import colorLogo from "../images/color-logo-tinder.png";
 
-const Nav = ({ authToken, minimal, setShowModal, showModal, setIsSignUp }) => {
+const Nav = ({ authToken, minimal, setShowModal, showModal, setIsSignUp, colour }) => {
   const handleClick = () => {
     setShowModal(true);
     setIsSignUp(false);
@@ -12,7 +13,7 @@ const Nav = ({ authToken, minimal, setShowModal, showModal, setIsSignUp }) => {
       <div className="logo-container">
         <img
           className="logo"
-          src={whiteLogo}
+          src={colour ? whiteLogo : blackLogo}
           alt="logo"
         />
       </div>

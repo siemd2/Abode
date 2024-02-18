@@ -191,16 +191,20 @@ app.put('/user', async (req, res) => {
 
         const updateDocument = {
             $set: {
-                first_name: formData.first_name,
-                dob_day: formData.dob_day,
-                dob_month: formData.dob_month,
-                dob_year: formData.dob_year,
-                show_gender: formData.show_gender,
-                gender_identity: formData.gender_identity,
-                gender_interest: formData.gender_interest,
+                budget: formData.budget,
+                bedrooms: formData.bedrooms,
+                bathrooms: formData.bathrooms,
+                stories: formData.stories,
+                guestroom: formData.guestroom,
+                basement: formData.basement,
+                prefarea: formData.prefarea,
+                parking: formData.parking,
+                furnishingstatus: formData.furnishingstatus,
+                kids: formData.kids,
                 url: formData.url,
-                about: formData.about,
-                matches: formData.matches
+                matches: formData.matches,
+                airconditioning: formData.airconditioning,
+                hotwaterheating: formData.hotwaterheating
             },
         }
 
