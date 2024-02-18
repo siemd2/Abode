@@ -18,22 +18,22 @@ const Dashboard = () => {
     // Hardcoded users for demonstration
     const hardcodedUsers = [
         {
-            user_id: 'hardcoded-1',
-            first_name: 'Alex',
+            user_id: '001',
+            first_name: 'Tenant 1',
             age: 29,
-            location: 'Lakeside, Montana, US',
-            bio: 'Loves hiking and outdoor activities.',
+            location: 'Calgary, Alberta, CA',
+            bio: 'Nice neighbourhood, 4 beds 4 baths, convenient location.',
             url: 'https://i.pinimg.com/originals/c1/f9/5a/c1f95a5d814bb204e25a4f72ee6142b5.jpg', // Placeholder image
-            price: '$200'
+            price: '$3800'
         },
         {
-            user_id: 'hardcoded-2',
-            first_name: 'Jordan',
+            user_id: '002',
+            first_name: 'Tenant 2',
             age: 22,
-            location: 'Miami, Florida, US',
-            bio: 'City life and coffee shops.',
+            location: 'Calgary, Alberta, CA',
+            bio: 'Dream home, 5 beds 4 baths, exclusive neighbourhood.',
             url: 'https://resrents.com/wp-content/uploads/2019/03/nice-house.jpeg', // Placeholder image
-            price: '$150'
+            price: '$4450'
         },
     ];
 
@@ -108,7 +108,7 @@ const Dashboard = () => {
                                     <h2>{profile.first_name}, {profile.age}</h2>
                                     <p className={styles.location}>{profile.location}</p>
                                     <p className={styles.bio}>{profile.bio}</p>
-                                    <p className={styles.price}>{profile.price} per night</p>
+                                    <p className={styles.price}>{profile.price} per month</p>
                                 </div>
                             </div>
                         </SwiperSlide>
