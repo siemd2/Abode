@@ -173,6 +173,13 @@ nav .logo-container .logo {
     width: 20%;
 }
 
+.onboarding form .check-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .onboarding form .multiple-input-container {
     display: flex;
     flex-direction: row;

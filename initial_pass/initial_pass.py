@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import random
 import math
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
 
 house_data = pd.read_csv('Final_Updated_Housing.csv')
 

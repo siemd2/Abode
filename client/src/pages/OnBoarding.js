@@ -9,13 +9,18 @@ const OnBoarding = () => {
     const [formData, setFormData] = useState({
         user_id: cookies.UserId,
         budget: "",
-        beds: "",
-        baths: "",
-        square_footage: "",
+        bedrooms: "",
+        bathrooms: "",
+        stories: "",
+        mainroad: true,
+        guestroom: true,
+        basement: true,
+        prefarea: "",
         parking: false,
-        furnished: false,
+        furnishingstatus: false,
         kids: "",
         url: "",
+        hotwaterheating: true,
         matches: []
     })
 
@@ -77,36 +82,48 @@ const OnBoarding = () => {
                         />
                         <label>Square Footage</label>
                         <input
-                            id="square_footage"
+                            id="prefarea"
                             type='number'
-                            name="square_footage"
+                            name="prefarea"
                             placeholder="ft²"
                             required={true}
-                            value={formData.square_footage}
+                            value={formData.prefarea}
                             onChange={handleChange}
                         />
                         <div className = "multicontainer">
                             <div className = "container">
-                                <label>Beds</label>
+                                <label>Bedrooms</label>
                                 <input
-                                    id="beds"
+                                    id="bedrooms"
                                     type='number'
-                                    name="beds"
+                                    name="bedrooms"
                                     placeholder=""
                                     required={true}
-                                    value={formData.beds}
+                                    value={formData.bedrooms}
                                     onChange={handleChange}
                                 />
                             </div>
                             <div className = "container">
-                                <label>Baths</label>
+                                <label>Bathrooms</label>
                                 <input
-                                    id="baths"
+                                    id="bathrooms"
                                     type='number'
-                                    name="baths"
+                                    name="bathrooms"
                                     placeholder=""
                                     required={true}
-                                    value={formData.baths}
+                                    value={formData.bathrooms}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                            <div className = "container">
+                                <label>Stories</label>
+                                <input
+                                    id="stories"
+                                    type='number'
+                                    name="stories"
+                                    placeholder=""
+                                    required={true}
+                                    value={formData.stories}
                                     onChange={handleChange}
                                 />
                             </div>
@@ -121,89 +138,41 @@ const OnBoarding = () => {
                             value={formData.kids}
                             onChange={handleChange}
                         />
-                        {/* <label>Birthday</label>
-                        <div className="multiple-input-container">
-                            <input
-                                id="dob_day"
-                                type="number"
-                                name="dob_day"
-                                placeholder="DD"
-                                required={true}
-                                value={formData.dob_day}
-                                onChange={handleChange}
-                            />
-
-                            <input
-                                id="dob_month"
-                                type="number"
-                                name="dob_month"
-                                placeholder="MM"
-                                required={true}
-                                value={formData.dob_month}
-                                onChange={handleChange}
-                            />
-
-                            <input
-                                id="dob_year"
-                                type="number"
-                                name="dob_year"
-                                placeholder="YYYY"
-                                required={true}
-                                value={formData.dob_year}
-                                onChange={handleChange}
-                            />
-                        </div> */}
-                        <div className = "multicontainer">
-                            <label>Parking?</label>
-                            <input
-                                id="parking"
-                                type="checkbox"
-                                name="parking"
-                                onChange={handleChange}
-                                checked={formData.parking}
-                            />
+                        <div className = "check-container">
+                            <div className = "multicontainer">
+                                <label>Parking?</label>
+                                <input
+                                    id="parking"
+                                    type="checkbox"
+                                    name="parking"
+                                    onChange={handleChange}
+                                    checked={formData.parking}
+                                />
+                            </div>
+                            <div className = "multicontainer">
+                                <label>Air Conditioning?</label>
+                                <input
+                                    id="airconditioning"
+                                    type="checkbox"
+                                    name="airconditioning"
+                                    onChange={handleChange}
+                                    checked={formData.airconditioning}
+                                />
+                            </div>
+                            <div className = "multicontainer">
+                                <label>Furnished?</label>
+                                <input
+                                    id="furnishingstatus"
+                                    type="checkbox"
+                                    name="furnishingstatus"
+                                    onChange={handleChange}
+                                    checked={formData.furnishingstatus}
+                                />
+                            </div>
                         </div>
-                        <div className = "multicontainer">
-                            <label>Furnished?</label>
-                            <input
-                                id="furnished"
-                                type="checkbox"
-                                name="furnished"
-                                onChange={handleChange}
-                                checked={formData.furnished}
-                            />
-                        </div>
-
-                        {/* <label htmlFor="about">About me</label>
-                        <input
-                            id="about"
-                            type="text"
-                            name="about"
-                            required={true}
-                            placeholder="I like long walks..."
-                            value={formData.about}
-                            onChange={handleChange}
-                        /> */}
-
                         <input type="submit"/>
                     </section>
 
-                    {/* <section>
-
-                        <label htmlFor="url">Profile Photo</label>
-                        <input
-                            type="url"
-                            name="url"
-                            id="url"
-                            onChange={handleChange}
-                            required={true}
-                        />
-                        <div className="photo-container">
-                            {formData.url && <img src={formData.url} alt="profile pic preview"/>}
-                        </div>
-
-
-                    </section> */}
 
                 </form>
             </div>
