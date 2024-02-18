@@ -1,3 +1,4 @@
+
 /* Assuming this is inside Dashboard.module.css
 
 .dashboardLayout {
@@ -90,13 +91,13 @@
     color: #EB5757;
     font-weight: 600;
   }
-   */
+
 
    .swipe-container {
     flex: 3;
     height: 100%;
   }
-
+   */
   .card {
     position: relative;
     background-color: white;
@@ -110,3 +111,6 @@
     flex-direction: column;
     transition: transform 0.3s;
   }
+
+
+
