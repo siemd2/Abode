@@ -6,41 +6,18 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import users from "./image_housing.json";
-
-//custom styles
 import styles from './Dashboard.module.css';
 
 const Dashboard = () => {
     const [user, setUser] = useState(null);
-    const [genderedUsers, setGenderedUsers] = useState([]); // Initialize as empty array
+    const [genderedUsers, setGenderedUsers] = useState([]);
     const [cookies, setCookie, removeCookie] = useCookies(['user']);
     const userId = cookies.UserId;
 
-
-    // Hardcoded users for demonstration
-    /*
-    const hardcodedUsers = [
-        {
-            user_id: '001',
-            first_name: 'Tenant 1',
-            age: 29,
-            location: 'Calgary, Alberta, CA',
-            bio: 'Nice neighbourhood, 4 beds 4 baths, convenient location.',
-            url: 'https://i.pinimg.com/originals/c1/f9/5a/c1f95a5d814bb204e25a4f72ee6142b5.jpg', // Placeholder image
-            price: '$3800'
-        },
-        {
-            user_id: '002',
-            first_name: 'Tenant 2',
-            age: 22,
-            location: 'Calgary, Alberta, CA',
-            bio: 'Dream home, 5 beds 4 baths, exclusive neighbourhood.',
-            url: 'https://resrents.com/wp-content/uploads/2019/03/nice-house.jpeg', // Placeholder image
-            price: '$4450'
-        },
-    ]; */
-
-    const jsonUsers = users;
+    const jsonUsers = users.map(user => ({
+        ...user,
+        bedroom_image: require(`./House/${user.bedroom_image}`)
+    }));
 
     const getUser = async () => {
         try {
@@ -99,6 +76,11 @@ const Dashboard = () => {
     return (
         <div className={styles.dashboardLayout}>
             {user && <ChatContainer user={user} />}
+            {/* Navbar with logo placeholder */}
+            <nav className={styles.navbar}>
+                <img src="logo-placeholder.png" alt="Logo" className={styles.logo} />
+                {/* Add more navbar items if needed */}
+            </nav>
             <div className={styles.swipeContainer}>
                 <Swiper
                     effect="cards"
@@ -120,6 +102,11 @@ const Dashboard = () => {
                     ))}
                 </Swiper>
             </div>
+            <div className={styles.buttonContainer}>
+                    <button className={styles.dummyButton}>Button 1</button>
+                    <button className={styles.dummyButton}>Button 2</button>
+                    <button className={styles.dummyButton}>Button 3</button>
+                </div>
         </div>
     );
 };
