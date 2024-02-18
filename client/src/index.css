@@ -140,6 +140,36 @@ nav .logo-container .logo {
     display: flex;
     justify-content: center;
 }
+.onboarding form section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 35%;
+    text-align: start;
+}
+
+.onboarding form input {
+    padding: 15px 20px;
+    margin: 10px 0;
+    font-size: 15px;
+    border: solid 2px rgb(219, 219, 219);
+    border-radius: 10px;
+}
+
+.onboarding form label {
+    margin: 10px 0;
+}
+
+.onboarding form .multicontainer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.onboarding form .container {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
 
 .onboarding form section {
     display: flex;

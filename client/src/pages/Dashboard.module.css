@@ -1,16 +1,16 @@
-/* Assuming this is inside Dashboard.module.css */
+/* Assuming this is inside Dashboard.module.css
+
 .dashboardLayout {
     display: flex;
-    justify-content: space-between; /* Spreads out the children to opposite ends */
-    height: 100vh; /* Full height of the viewport */
+    justify-content: space-between; /* Spreads out the children to opposite ends 
+    height: 100vh; 
   }
   
   .swipeContainer {
-    flex-grow: 1; /* Allows the swipe container to grow and fill the space */
-    padding: 20px; /* Or adjust as needed for spacing */
+    flex-grow: 1;
+    padding: 20px;
   }
   
-  /* Rest of your CSS for card, cardImage, cardInfo, etc. */
   
 .card {
     position: relative;
@@ -26,23 +26,23 @@
   }
 
   .chat-container {
-    flex: 1; /* Takes up only the space it needs based on its content */
-    margin-right: 20px; /* Adds spacing between chat and cards */
+    flex: 1; 
+    margin-right: 20px; /* Adds spacing between chat and cards 
   }
   
   .swipe-container {
-    flex: 3; /* Takes up the remaining space */
-    height: 100%; /* Ensures it takes the full height of the dashboard container */
+    flex: 3; /* Takes up the remaining space 
+    height: 100%; /* Ensures it takes the full height of the dashboard container 
   }
   
   .chat-container {
-    flex: 1; /* Takes up only the space it needs based on its content */
-    margin-right: 20px; /* Adds spacing between chat and cards */
+    flex: 1; /* Takes up only the space it needs based on its content 
+    margin-right: 20px; /* Adds spacing between chat and cards 
   }
   
   .swipe-container {
-    flex: 3; /* Takes up the remaining space */
-    height: 100%; /* Ensures it takes the full height of the dashboard container */
+    flex: 3; /* Takes up the remaining space
+    height: 100%; 
   }
   
   .card:hover {
@@ -90,4 +90,23 @@
     color: #EB5757;
     font-weight: 600;
   }
-  
+   */
+
+   .swipe-container {
+    flex: 3;
+    height: 100%;
+  }
+
+  .card {
+    position: relative;
+    background-color: white;
+    width: 100%;
+    height: 700px;
+    border-radius: 20px;
+    overflow: hidden;
+    
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+  }

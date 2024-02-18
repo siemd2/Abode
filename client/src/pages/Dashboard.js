@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
+import users from "./image_housing.json";
 
 //custom styles
 import styles from './Dashboard.module.css';
@@ -15,7 +16,9 @@ const Dashboard = () => {
     const [cookies, setCookie, removeCookie] = useCookies(['user']);
     const userId = cookies.UserId;
 
+
     // Hardcoded users for demonstration
+    /*
     const hardcodedUsers = [
         {
             user_id: 'hardcoded-1',
@@ -35,7 +38,9 @@ const Dashboard = () => {
             url: 'https://resrents.com/wp-content/uploads/2019/03/nice-house.jpeg', // Placeholder image
             price: '$150'
         },
-    ];
+    ]; */
+
+    const jsonUsers = users;
 
     const getUser = async () => {
         try {
@@ -89,7 +94,7 @@ const Dashboard = () => {
     const matchedUserIds = user?.matches.map(({ user_id }) => user_id).concat(userId);
     const filteredGenderedUsers = genderedUsers.filter(genderedUser => !matchedUserIds.includes(genderedUser.user_id));
 
-    const combinedUsers = [...genderedUsers, ...hardcodedUsers];
+    //const combinedUsers = [...genderedUsers, ...jsonUsers];
 
     return (
         <div className={styles.dashboardLayout}>
@@ -100,15 +105,15 @@ const Dashboard = () => {
                     grabCursor={true}
                     className={styles.cardContainer}
                 >
-                    {combinedUsers.map((profile) => (
-                        <SwiperSlide key={profile.user_id} onSlideChangeTransitionEnd={() => onSwipe(profile.user_id)}>
-                            <div className={styles.card} style={{ backgroundImage: `url(${profile.url})` }}>
+                    {jsonUsers.map((profile) => (
+                        <SwiperSlide key={profile['Unnamed: 0']} onSlideChangeTransitionEnd={() => onSwipe(profile['Unnamed: 0'])}>
+                            <div className={styles.card} style={{ backgroundImage: `url(${profile.bedroom_image})` }}>
                                 <div className={styles.cardImage}></div>
                                 <div className={styles.cardInfo}>
-                                    <h2>{profile.first_name}, {profile.age}</h2>
-                                    <p className={styles.location}>{profile.location}</p>
-                                    <p className={styles.bio}>{profile.bio}</p>
-                                    <p className={styles.price}>{profile.price} per night</p>
+                                    <h2>{profile.fake_address}</h2>
+                                    <p className={styles.location}>{profile.area} ft²</p>
+                                    <p className={styles.bio}>{profile.bedrooms} bedrooms, {profile.bathrooms} bathrooms</p>
+                                    <p className={styles.price}>${profile.price} per night</p>
                                 </div>
                             </div>
                         </SwiperSlide>
