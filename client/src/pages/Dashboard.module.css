@@ -98,26 +98,55 @@
     height: 100%;
   }
    */
-  .card {
+   .card {
     position: relative;
     background-color: white;
     width: 100%;
-    height: 700px;
+    height: 600px;
     border-radius: 20px;
     overflow: hidden;
-    
     box-shadow: 0 8px 24px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
     transition: transform 0.3s;
-  }
+    background-size: cover; /* Ensures that the background image covers the entire container */
+    background-position: center; /* Centers the background image */
+}
+
+.textContainer {
+  position: absolute;
+  bottom: 0; /* Aligns the container to the bottom of its containing element */
+  width: 100%; /* Takes up the full width of the screen */
+  background-color: white; /* Sets the background color to white */
+  padding: 5px; /* Adds padding to the container */
+  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+  opacity: 0.5;
+}
+
+
   .card-image {
     height: auto;
     background-size: auto;
     background-position: center;
     position: relative;
-    object-fit: fill;
+    object-fit: cover;
+  }
+  .cardInfo {
+
   }
 
 
+  .dashboardLayout {
+  
+    justify-content: space-between; 
+    position: absolute;
+    bottom: 0; /* Aligns the container to the bottom of its containing element */
+    width: 100%; /* Takes up the full width of the screen */
+    background-color: white; /* Sets the background color to white */
+    padding: 1%; /* Adds padding to the container */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+  }
+  .navbar {
+
+  }
 
