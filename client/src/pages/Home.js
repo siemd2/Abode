@@ -10,12 +10,12 @@ const Home = () => {
     const authToken = cookies.AuthToken
 
     const handleClick = () => {
-        //if (authToken) {
-        //    removeCookie('UserId', cookies.UserId)
-        //    removeCookie('AuthToken', cookies.AuthToken)
-        //    window.location.reload()
-        //    return
-        //}
+        if (authToken) {
+           removeCookie('UserId', cookies.UserId)
+           removeCookie('AuthToken', cookies.AuthToken)
+           window.location.reload()
+           return
+        }
         setShowModal(true)
         setIsSignUp(true)
     }
