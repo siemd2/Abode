@@ -7,12 +7,15 @@ import 'swiper/css';
 import 'swiper/css/effect-cards';
 import users from "./image_housing.json";
 import styles from './Dashboard.module.css';
+import whiteLogo from "../images/abode-high-resolution-logo-white-transparent.png";
+import colorLogo from "../images/abode-high-resolution-logo-transparent.png";
 
 const Dashboard = () => {
     const [user, setUser] = useState(null);
     const [genderedUsers, setGenderedUsers] = useState([]);
     const [cookies, setCookie, removeCookie] = useCookies(['user']);
     const userId = cookies.UserId;
+    
 
     const jsonUsers = users.map(user => ({
         ...user,
@@ -74,12 +77,18 @@ const Dashboard = () => {
     //const combinedUsers = [...genderedUsers, ...jsonUsers];
 
     return (
+        
         <div className={styles.dashboardLayout}>
             {user && <ChatContainer user={user} />}
             {/* Navbar with logo placeholder */}
             <nav className={styles.navbar}>
-                <img src="logo-placeholder.png" alt="Logo" className={styles.logo} />
-                {/* Add more navbar items if needed */}
+                <div className="logo-container">
+                 <img
+                    className="logo"
+                    src={colorLogo}
+                 alt="logo"
+                />
+      </div>
             </nav>
             <div className={styles.swipeContainer}>
                 <Swiper
@@ -90,23 +99,27 @@ const Dashboard = () => {
                     {jsonUsers.map((profile) => (
                         <SwiperSlide key={profile['Unnamed: 0']} onSlideChangeTransitionEnd={() => onSwipe(profile['Unnamed: 0'])}>
                             <div className={styles.card} style={{ backgroundImage: `url(${profile.bedroom_image})` }}>
+                                <div className={styles.textContainer}>
                                 <div className={styles.cardImage}></div>
                                 <div className={styles.cardInfo}>
                                     <h2>{profile.fake_address}</h2>
                                     <p className={styles.location}>{profile.area} ft²</p>
                                     <p className={styles.bio}>{profile.bedrooms} bedrooms, {profile.bathrooms} bathrooms</p>
-                                    <p className={styles.price}>${profile.price} per night</p>
+                                    <p className={styles.price}>${profile.price} per month</p>
                                 </div>
+                                </div> 
                             </div>
                         </SwiperSlide>
                     ))}
                 </Swiper>
-            </div>
-            <div className={styles.buttonContainer}>
+                /*
+                <div className={styles.buttonContainer}>
                     <button className={styles.dummyButton}>Button 1</button>
                     <button className={styles.dummyButton}>Button 2</button>
                     <button className={styles.dummyButton}>Button 3</button>
-                </div>
+                </div> 
+            </div>
+            
         </div>
     );
 };

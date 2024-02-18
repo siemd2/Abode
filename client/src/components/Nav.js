@@ -1,5 +1,5 @@
 import whiteLogo from "../images/abode-high-resolution-logo-white-transparent.png";
-import colorLogo from "../images/color-logo-tinder.png";
+
 
 const Nav = ({ authToken, minimal, setShowModal, showModal, setIsSignUp }) => {
   const handleClick = () => {
