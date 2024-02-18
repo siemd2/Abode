@@ -23,10 +23,12 @@ const OnBoarding = () => {
 
     const handleSubmit = async (e) => {
         console.log('submitted')
+        console.log({formData})
         e.preventDefault()
         try {
             const response = await axios.put('http://localhost:8000/user', {formData})
             console.log(response)
+            console.log(response.data.form)
             const success = response.status === 200
             if (success) navigate('/dashboard')
         } catch (err) {
@@ -39,11 +41,14 @@ const OnBoarding = () => {
         console.log('e', e)
         const value = e.target.type === "checkbox" ? e.target.checked : e.target.value
         const name = e.target.name
+        console.log(name)
+        console.log(value)
 
         setFormData((prevState) => ({
             ...prevState,
-            [name]: value
+            [name]: value,
         }))
+        console.log(formData)
     }
 
     return (
@@ -56,7 +61,7 @@ const OnBoarding = () => {
             />
 
             <div className="onboarding">
-                <h2>CREATE ACCOUNT</h2>
+                <h2>Enter your preferences</h2>
 
                 <form onSubmit={handleSubmit}>
                     <section>
@@ -68,6 +73,16 @@ const OnBoarding = () => {
                             placeholder="$$$"
                             required={true}
                             value={formData.budget}
+                            onChange={handleChange}
+                        />
+                        <label>Square Footage</label>
+                        <input
+                            id="square_footage"
+                            type='number'
+                            name="square_footage"
+                            placeholder="ft²"
+                            required={true}
+                            value={formData.square_footage}
                             onChange={handleChange}
                         />
                         <div className = "multicontainer">

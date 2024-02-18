@@ -28,7 +28,6 @@ const AuthModal = ({ setShowModal,  isSignUp }) => {
                 setError('Passwords need to match!')
                 return
             }
-
             const response = await axios.post(`http://localhost:8000/${isSignUp ? 'signup' : 'login'}`, { email, password })
 
             setCookie('AuthToken', response.data.token)
