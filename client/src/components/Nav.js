@@ -1,4 +1,4 @@
-import whiteLogo from "../images/tinder_logo_white.png";
+import whiteLogo from "../images/abode-high-resolution-logo-white-transparent.png";
 import colorLogo from "../images/color-logo-tinder.png";
 
 const Nav = ({ authToken, minimal, setShowModal, showModal, setIsSignUp }) => {
@@ -12,7 +12,7 @@ const Nav = ({ authToken, minimal, setShowModal, showModal, setIsSignUp }) => {
       <div className="logo-container">
         <img
           className="logo"
-          src={minimal ? colorLogo : whiteLogo}
+          src={whiteLogo}
           alt="logo"
         />
       </div>
