@@ -3,7 +3,7 @@ import numpy as np
 import random
 import math
 
-house_data = pd.read_csv('Final_Updated_Housing.csv')
+house_data = pd.read_csv('initial_pass/Final_Updated_Housing.csv')
 
 # Random input
 inputs = np.array([500000, 2000, 3, 4, 2, 1, 0, 1, 1, 0, 2, 0, 0.5])
@@ -16,6 +16,7 @@ headers = ['price','area','bedrooms','bathrooms','stories','mainroad',
 
 # Cleaned data by getting rid of houses in the dataset that we are obviously not
 # interested in
+
 for i in range(len(inputs)):
     if inputs[i] == 0:
         clean_data = np.array(house_data[house_data[headers[i]]>0])
@@ -47,3 +48,20 @@ print(euclidean_data)
 
 # for i in range(sliced_euclidean.shape[0]):
 #     distance = euclidean_distance()
+
+
+"""
+function euclideanDistance(point1, point2) {
+    let sum = 0;
+    for (let i = 0; i < point1.length; i++) {
+        sum += Math.pow(point1[i] - point2[i], 2);
+    }
+    return Math.sqrt(sum);
+}
+
+let distancesList = [];
+for (let i = 0; i < analog_df.length; i++) {
+    let distance = euclideanDistance(analog_inputs, analog_df[i]);
+    distancesList.push(distance);
+}
+"""

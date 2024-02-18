@@ -4,6 +4,7 @@ import {useCookies} from 'react-cookie'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 
+
 const OnBoarding = () => {
     const [cookies, setCookie, removeCookie] = useCookies(null)
     const [formData, setFormData] = useState({
@@ -63,6 +64,7 @@ const OnBoarding = () => {
                 setShowModal={() => {
                 }}
                 showModal={false}
+                colour={false}
             />
 
             <div className="onboarding">

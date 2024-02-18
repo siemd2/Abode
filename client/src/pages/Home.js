@@ -28,6 +28,7 @@ const Home = () => {
                 setShowModal={setShowModal}
                 showModal={showModal}
                 setIsSignUp={setIsSignUp}
+                colour = {true}
             />
             <div className="home">
                 <h1 className="primary-title">ABODE</h1>
