@@ -8,17 +8,15 @@ const OnBoarding = () => {
     const [cookies, setCookie, removeCookie] = useCookies(null)
     const [formData, setFormData] = useState({
         user_id: cookies.UserId,
-        first_name: "",
-        dob_day: "",
-        dob_month: "",
-        dob_year: "",
-        show_gender: false,
-        gender_identity: "man",
-        gender_interest: "woman",
+        budget: "",
+        beds: "",
+        baths: "",
+        square_footage: "",
+        parking: false,
+        furnished: false,
+        kids: "",
         url: "",
-        about: "",
         matches: []
-
     })
 
     let navigate = useNavigate()
@@ -62,18 +60,53 @@ const OnBoarding = () => {
 
                 <form onSubmit={handleSubmit}>
                     <section>
-                        <label htmlFor="first_name">First Name</label>
+                        <label>Budget</label>
                         <input
-                            id="first_name"
-                            type='text'
-                            name="first_name"
-                            placeholder="First Name"
+                            id="budget"
+                            type='number'
+                            name="budget"
+                            placeholder="$$$"
                             required={true}
-                            value={formData.first_name}
+                            value={formData.budget}
                             onChange={handleChange}
                         />
-
-                        <label>Birthday</label>
+                        <div className = "multicontainer">
+                            <div className = "container">
+                                <label>Beds</label>
+                                <input
+                                    id="beds"
+                                    type='number'
+                                    name="beds"
+                                    placeholder=""
+                                    required={true}
+                                    value={formData.beds}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                            <div className = "container">
+                                <label>Baths</label>
+                                <input
+                                    id="baths"
+                                    type='number'
+                                    name="baths"
+                                    placeholder=""
+                                    required={true}
+                                    value={formData.baths}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                        </div>
+                        <label>Kids</label>
+                        <input
+                            id="kids"
+                            type='number'
+                            name="kids"
+                            placeholder=""
+                            required={false}
+                            value={formData.kids}
+                            onChange={handleChange}
+                        />
+                        {/* <label>Birthday</label>
                         <div className="multiple-input-container">
                             <input
                                 id="dob_day"
@@ -104,83 +137,29 @@ const OnBoarding = () => {
                                 value={formData.dob_year}
                                 onChange={handleChange}
                             />
+                        </div> */}
+                        <div className = "multicontainer">
+                            <label>Parking?</label>
+                            <input
+                                id="parking"
+                                type="checkbox"
+                                name="parking"
+                                onChange={handleChange}
+                                checked={formData.parking}
+                            />
+                        </div>
+                        <div className = "multicontainer">
+                            <label>Furnished?</label>
+                            <input
+                                id="furnished"
+                                type="checkbox"
+                                name="furnished"
+                                onChange={handleChange}
+                                checked={formData.furnished}
+                            />
                         </div>
 
-                        <label>Gender</label>
-                        <div className="multiple-input-container">
-                            <input
-                                id="man-gender-identity"
-                                type="radio"
-                                name="gender_identity"
-                                value="man"
-                                onChange={handleChange}
-                                checked={formData.gender_identity === "man"}
-                            />
-                            <label htmlFor="man-gender-identity">Man</label>
-                            <input
-                                id="woman-gender-identity"
-                                type="radio"
-                                name="gender_identity"
-                                value="woman"
-                                onChange={handleChange}
-                                checked={formData.gender_identity === "woman"}
-                            />
-                            <label htmlFor="woman-gender-identity">Woman</label>
-                            <input
-                                id="more-gender-identity"
-                                type="radio"
-                                name="gender_identity"
-                                value="more"
-                                onChange={handleChange}
-                                checked={formData.gender_identity === "more"}
-                            />
-                            <label htmlFor="more-gender-identity">More</label>
-                        </div>
-
-                        <label htmlFor="show-gender">Show Gender on my Profile</label>
-
-                        <input
-                            id="show-gender"
-                            type="checkbox"
-                            name="show_gender"
-                            onChange={handleChange}
-                            checked={formData.show_gender}
-                        />
-
-                        <label>Show Me</label>
-
-                        <div className="multiple-input-container">
-                            <input
-                                id="man-gender-interest"
-                                type="radio"
-                                name="gender_interest"
-                                value="man"
-                                onChange={handleChange}
-                                checked={formData.gender_interest === "man"}
-                            />
-                            <label htmlFor="man-gender-interest">Man</label>
-                            <input
-                                id="woman-gender-interest"
-                                type="radio"
-                                name="gender_interest"
-                                value="woman"
-                                onChange={handleChange}
-                                checked={formData.gender_interest === "woman"}
-                            />
-                            <label htmlFor="woman-gender-interest">Woman</label>
-                            <input
-                                id="everyone-gender-interest"
-                                type="radio"
-                                name="gender_interest"
-                                value="everyone"
-                                onChange={handleChange}
-                                checked={formData.gender_interest === "everyone"}
-                            />
-                            <label htmlFor="everyone-gender-interest">Everyone</label>
-
-                        </div>
-
-                        <label htmlFor="about">About me</label>
+                        {/* <label htmlFor="about">About me</label>
                         <input
                             id="about"
                             type="text"
@@ -189,12 +168,12 @@ const OnBoarding = () => {
                             placeholder="I like long walks..."
                             value={formData.about}
                             onChange={handleChange}
-                        />
+                        /> */}
 
                         <input type="submit"/>
                     </section>
 
-                    <section>
+                    {/* <section>
 
                         <label htmlFor="url">Profile Photo</label>
                         <input
@@ -209,7 +188,7 @@ const OnBoarding = () => {
                         </div>
 
 
-                    </section>
+                    </section> */}
 
                 </form>
             </div>

@@ -32,7 +32,7 @@ const Home = () => {
             <div className="home">
                 <h1 className="primary-title">ABODE</h1>
                 <button className="primary-button" onClick={handleClick}>
-                    GO TO DASHBOARD
+                    LOG IN
                 </button>
 
 
